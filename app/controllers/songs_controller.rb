@@ -1,7 +1,7 @@
-require 'rack-flash'
+# require 'rack-flash'
 
 class SongsController < ApplicationController
-use Rack::Flash
+# use Rack::Flash
 
 #This should present the user with a list of all songs in the library.
 #Each song should be a clickable link to that particular song's show page.
