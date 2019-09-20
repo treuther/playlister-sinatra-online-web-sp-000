@@ -11,5 +11,5 @@ class Artist < ActiveRecord::Base
   def self.find_by_slug(slug)
     self.all.find{|instance| instance.slug == slug}
   end
-  
+
 end
