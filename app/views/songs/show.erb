@@ -1,4 +1,6 @@
 <!-- Displays the song's name, artist and genre -->
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
 
 <h1> <%= @song.name %> </h1>
 
