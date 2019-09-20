@@ -43,7 +43,7 @@ class SongsController < ApplicationController
 
 #Be able to change everything about a song, including the genres associated
 #with it and its artist.
-  get '/songs/:slub/edit' do
+  get '/songs/:slug/edit' do
     @song = Song.find_by_slug(params[:slug])
 
     erb :'/songs/edit'
