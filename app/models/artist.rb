@@ -1,4 +1,4 @@
-class Artists < ActiveRecord::Base
+class Artist < ActiveRecord::Base
   include Slugifiable::InstanceMethods
   extend Slugifiable::ClassMethods
   has_many :songs
