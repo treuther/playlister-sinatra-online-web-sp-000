@@ -20,7 +20,23 @@ class SongsController < ApplicationController
   end
 
 #Other routes go in here...
+  post '/songs' do
+    @song = Song.create(params["song"])
+    artist = Artist.all.find do |artist|
+      artist.slug == params[:artist][:name].downcase.gsub(' ','-')
+    end
+    if artist
+      artist.songs << @song
+    else
+      @artist = Artist.create(name: params[:artist][:name])
+      @artist.songs << @song
+    end
 
+    params[:genres].each do |genre|
+      @song.genres << Genre.find(genre)
+    end
+    redirect to "/songs/#{@song.slug}"
+  end
 #Any given song's show page should have links to that song's artist and the
 #each genre associated with the song.
 #

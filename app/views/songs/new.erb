@@ -1,3 +1,23 @@
 <!-- There needs to be a form on this page for users to enter in a new song.
 The form should include Genre checkboxes, and have a text field to enter a
-new artist (only one artist per song).
+new artist (only one artist per song).-->
+<h1>Add a New Song</h1>
+
+<form action='/songs' method="POST">
+  <label for="song[name]"> Name: </label>
+  <input name="song[name]" id="Name" type="text">
+  <br>
+
+  <h3>Genres:</h3>
+    <% @genres.each do |genre| %>
+    <input type="checkbox" name="genres[]" id="<%= genre.name %>" value="<%= genre.id %>"><%= genre.name %></input><br>
+    <% end %>
+<br>
+
+  <label for="artist[name]">Artist Name: </label>
+  <input type="text" name="artist[name]" id="Artist Name">
+
+  <input type="submit" name="submit" id="Create">
+
+
+</form>

@@ -10,6 +10,7 @@ class GenresController < ApplicationController
 
 #Any given genre's show page should have links to each of its artists and songs.
   get '/genres/:slug' do
-
+    @genre = Genre.find_by_slug(params[:slug])
+    erb :'/genres/show'
   end
 end
