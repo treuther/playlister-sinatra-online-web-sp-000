@@ -4,7 +4,7 @@
 <form action='/songs/<%=@song.slug%>' method="post">
   <input type="hidden" value="patch" name="_method">
   <label> Name: </label>
-  <input type="text" name="song[name]" id="Name">
+  <input type="text" name="song[name]" value="<%=@song.name%>" id="Name">
   <br>
 
   <label>Artist Name:</label>
